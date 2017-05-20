@@ -1,0 +1,24 @@
+<nav class="side-menu">
+  <ul class="menu">
+    <li class="menu-category">
+      GENERAL
+    </li>
+    <li class="menu-item">
+      <div class="menu-name">
+        <i class="fa fa-desktop" aria-hidden="true"></i>
+        Dashboard
+      </div>
+    </li>
+    <li class="menu-item has-sub" routerLinkActive="is-active">
+      <div class="menu-name" [routerLink]="['/posts']">
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        Posts
+      </div>
+      <ul class="sub-menu">
+        <li class="sub-menu-item" [routerLink]="['/posts']" [ngClass]="{'is-active': checkLocationMatch('posts', 'edit')}">All Posts</li>
+        <li class="sub-menu-item" [routerLink]="['/posts/new']" [ngClass]="{'is-active': checkLocationMatch('new')}">Add New</li>
+        <li class="sub-menu-item">Categories</li>
+      </ul>
+    </li>
+  </ul>
+</nav>

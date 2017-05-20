@@ -1,0 +1,51 @@
+<section class="edit-post">
+  <div class="post-header">
+    <h2>{{title}}</h2>
+    <a class="btn is-success" *ngIf="this.id !== undefined" [routerLink]="['/posts/new']">Add New</a>
+    <a class="btn is-success" *ngIf="this.id === undefined" (click)="submitPost()">Create Post</a>
+  </div>
+  <div class="post-title">
+    <input type="text" [(ngModel)]="post.title">
+    <span class="post-permalink">http://halasedesign.wpengine.com/hello-world-2/</span>
+  </div>
+  <div class="post-editor">
+    <quill-editor [(ngModel)]="post.content"
+              [options]="editorOptions"
+              (blur)="onEditorBlured($event)"
+              (focus)="onEditorFocused($event)"
+              (ready)="onEditorCreated($event)"
+              (change)="onContentChanged($event)"></quill-editor>
+  </div>
+  <div class="post-options">
+    <div class="panel post-publish">
+      <div class="panel-title">Publish</div>
+      <div class="panel-content">
+        <ul class="publish-options-list">
+          <li>
+            Status
+            <div class="select-wrapper">
+              <select class="dropdown" [(ngModel)]="post.status">
+                <option value="Publish">Publish</option>
+                <option value="Draft">Draft</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            Visibility
+            <div class="select-wrapper">
+              <select class="dropdown" [(ngModel)]="post.visibility">
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Placeholder</div>
+      <div class="panel-content">
+      </div>
+    </div>
+  </div>
+</section>

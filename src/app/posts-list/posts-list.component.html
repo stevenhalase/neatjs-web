@@ -1,0 +1,33 @@
+<section class="posts-list">
+  <div class="posts-header">
+    <h2>Posts</h2>
+    <a class="btn is-success" [routerLink]="['/posts/new']">Add New</a>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Categories</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td><input type="checkbox"></td>
+          <td>
+            <span class="post-title" [routerLink]="['/posts/edit/' + post._id]">{{post.title}}</span>
+            <span class="post-permalink">http://www.20theme.com/products/0</span>
+          </td>
+          <td>Joe Schmoe</td>
+          <td>Blog</td>
+          <td>
+            <span class="chip is-primary">{{post.status}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+.side-menu {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: calc(100vh - 50px);
+  background-color: #333;
+}
+
+.side-menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu .menu .menu-category {
+  font-size: 12px;
+  color: #969696;
+  padding: 10px;
+}
+
+.side-menu .menu .menu-item {
+  position: relative;
+  font-size: 15px;
+  color: #FFF;
+}
+
+.side-menu .menu .menu-item .menu-name {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-menu .menu .menu-item .menu-name:hover {
+  color: #DDD;
+}
+
+.side-menu .menu .menu-item.is-active .menu-name {
+  background-color: #006f94;
+}
+
+.side-menu .menu .menu-item.has-sub:after {
+  content: '\F0DA';
+  position: relative;
+  font-family: FontAwesome;
+  position: absolute;
+  right: 15px;
+  top: 13px;
+}
+
+.side-menu .menu .menu-item i {
+  margin-right: 10px;
+}
+
+.side-menu .menu .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0;
+  background-color: #222;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.side-menu .menu-item.is-active .sub-menu {
+  height: auto;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.side-menu .menu .sub-menu .sub-menu-item {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.side-menu .menu .sub-menu .sub-menu-item.is-active {
+  font-weight: 400;
+}
+
+.side-menu .menu .sub-menu .sub-menu-item:hover {
+  color: #DDD;
+  cursor: pointer;
+}
+
+*:focus {
+  outline: none;
+}
