@@ -60,51 +60,8 @@
   color: #666;
 }
 
-.btn {
-  background-color: #EEE;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #DDD;
-}
-
-.chip {
-  font-size: 12px;
-  background-color: #EEE;
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.chip:hover {
-  background-color: #DDD;
-}
-
 .post-title {
   color: #006f94;
   cursor: pointer;
 }
 
-.is-success {
-  background-color: #4caf50;
-  color: #FFF;
-}
-
-.is-success:hover {
-  background-color: #48a64c;
-}
-
-.is-primary {
-  background-color: #3498db;
-  color: #FFF;
-}
-
-.is-primary:hover {
-  background-color: #2f8ac6;
-}
-
-a {
-  text-decoration: none;
-}

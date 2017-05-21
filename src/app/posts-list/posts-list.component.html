@@ -12,6 +12,7 @@
           <th>Author</th>
           <th>Categories</th>
           <th>Status</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +27,7 @@
           <td>
             <span class="chip is-primary">{{post.status}}</span>
           </td>
+          <td>{{post.createdon | date:'shortDate'}}</td>
         </tr>
       </tbody>
     </table>

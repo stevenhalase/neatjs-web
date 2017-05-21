@@ -1,7 +1,11 @@
 <section class="edit-post">
+  <div class="notification is-success" [ngClass]="{'notification--visible': showSuccessNotification}" (click)="closeNotification()">
+    <p>Post saved</p>
+  </div>
   <div class="post-header">
     <h2>{{title}}</h2>
-    <a class="btn is-success" *ngIf="this.id !== undefined" [routerLink]="['/posts/new']">Add New</a>
+    <a class="btn is-success" *ngIf="this.id !== undefined && this.post._id === null" [routerLink]="['/posts/new']">Add New</a>
+    <a class="btn is-success" *ngIf="this.id !== undefined && this.post._id !== null" (click)="updatePost()">Save Changes</a>
     <a class="btn is-success" *ngIf="this.id === undefined" (click)="submitPost()">Create Post</a>
   </div>
   <div class="post-title">
@@ -43,8 +47,14 @@
       </div>
     </div>
     <div class="panel">
-      <div class="panel-title">Placeholder</div>
+      <div class="panel-title">Information</div>
       <div class="panel-content">
+        <ul class="publish-options-list">
+          <li>
+            <p>Created On</p>
+            <p>{{post.createdon | date:'medium'}}</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

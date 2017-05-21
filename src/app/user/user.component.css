@@ -1,0 +1,123 @@
+.user {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - 50px);
+  width: calc(100vw - 200px);
+  background-color: #EEE;
+  overflow-y: auto;
+}
+
+.user .user-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF;
+  margin: 15px;
+}
+
+.user .user-header h2 {
+  margin-left: 20px;
+}
+
+.user .user-header a {
+  margin-right: 20px;
+}
+
+.user .user-container {
+  margin: 15px;
+}
+
+.user .user-container .user-hero-header {
+  position: relative;
+}
+
+.user .user-container .user-hero-header .user-cover-image {
+  width: 100%;
+  height: 200px;
+}
+
+.user .user-container .user-hero-header .user-profile-image {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.user .user-container .user-hero-header .user-profile-image-container:hover:after{
+  content: '\F040';
+  font-family: FontAwesome;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  color: #FFF;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.user .user-container .user-hero-header .user-title {
+  position: absolute;
+  left: calc(5% + 125px);
+  bottom: 30px;
+  color: #FFF;
+  font-size: 28px;
+  font-weight: 200;
+  text-shadow: 1px 1px rgba(0,0,0,0.7);
+}
+
+.user .user-container .user-hero-header .user-title:after {
+  content: '\F040';
+  font-family: FontAwesome;
+  position: relative;
+  bottom: 3px;
+  left: 10px;
+  color: #FFF;
+  font-size: 12px;
+}
+
+.user .user-container .user-hero-header .input-wrapper {
+  position: absolute;
+  left: calc(5% + 125px);
+  bottom: 28px;
+  font-size: 28px;
+  font-weight: 200;
+  width: 290px;;
+}
+
+.user .user-container .user-hero-header .input-wrapper:after {
+  content: '\F00C';
+  font-family: FontAwesome;
+  position: absolute;
+  bottom: 10px;
+  right: -30px;
+  color: #333;
+  font-size: 12px;
+}
+
+.user .user-container .user-hero-header input {
+  font-size: 28px;
+  font-weight: 200;
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  background-color: #FFF;
+  padding-left: 5px;
+  padding-right: 40px;
+}
+
+.hidden,
+.hidden:after {
+  visibility: hidden;
+}

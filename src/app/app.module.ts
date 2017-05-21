@@ -11,13 +11,28 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { SettingsComponent } from './settings/settings.component';
+import { UserComponent } from './user/user.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 const appRoutes: Routes = [
-  { path: 'posts', component: AppComponent,
+  { path: 'login', component: LoginPageComponent },
+  { path: 'posts', component: AdminPageComponent,
     children: [
       { path: '', component: PostsListComponent },
       { path: 'edit/:id', component: EditPostComponent },
       { path: 'new', component: EditPostComponent }
+    ] 
+  },
+  { path: 'settings', component: AdminPageComponent,
+    children: [
+      { path: '', component: SettingsComponent }
+    ] 
+  },
+  { path: 'user', component: AdminPageComponent,
+    children: [
+      { path: '', component: UserComponent }
     ] 
   }
 ];
@@ -29,7 +44,11 @@ const appRoutes: Routes = [
     TopNavigationComponent,
     SideMenuComponent,
     PostsListComponent,
-    EditPostComponent
+    EditPostComponent,
+    SettingsComponent,
+    UserComponent,
+    AdminPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

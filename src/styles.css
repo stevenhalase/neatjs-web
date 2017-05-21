@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+a {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #EEE;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #DDD;
+}
+
+.chip {
+  font-size: 12px;
+  background-color: #EEE;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background-color: #DDD;
+}
+
+select.dropdown {
+  padding-right: 24px;
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #DFE3E9;
+  border-radius: 0;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.select-wrapper {
+  width: 50%;
+  position: relative;
+}
+
+.select-wrapper:after {
+  content: '\F0D7';
+  position: relative;
+  font-family: FontAwesome;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.notification {
+  position: fixed;
+  top: -51px;
+  left: 0;
+  margin: 0 auto;
+  background-color: #333;
+  width: 100vw;
+  text-align: center;
+  color: #FFF;
+  transition: top .25s ease-in-out;
+}
+
+.notification:after {
+  content: '\F057';
+  position: relative;
+  font-family: FontAwesome;
+  position: absolute;
+  right: 15px;
+  top: 17px;
+  cursor: pointer;
+}
+
+.notification--visible {
+  top: 0;
+  transition: top .25s ease-in-out;
+}
+
+.panel {
+  background-color: #FFF;
+  padding: 10px;
+  width: calc(50% - 30px);
+}
+
+.panel .panel-title {
+  padding: 10px 0;
+  border-bottom: 1px solid #DDD;
+  margin-bottom: 10px;
+}
+
+.is-success {
+  background-color: #4caf50!important;
+  color: #FFF!important;
+}
+
+.is-success:hover {
+  background-color: #48a64c!important;
+}
+
+.is-primary {
+  background-color: #3498db!important;
+  color: #FFF!important;
+}
+
+.is-primary:hover {
+  background-color: #2f8ac6!important;
+}

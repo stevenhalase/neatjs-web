@@ -1,0 +1,27 @@
+.settings {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - 50px);
+  width: calc(100vw - 200px);
+  background-color: #EEE;
+  overflow-y: auto;
+}
+
+.settings .settings-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFF;
+  margin: 15px;
+}
+
+.settings .settings-header h2 {
+  margin-left: 20px;
+}
+
+.settings .settings-header a {
+  margin-right: 20px;
+}

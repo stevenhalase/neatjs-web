@@ -43,3 +43,8 @@
   right: -5px;
   vertical-align: middle;
 }
+
+.brand {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}

@@ -20,5 +20,17 @@
         <li class="sub-menu-item">Categories</li>
       </ul>
     </li>
+    <li class="menu-item" routerLinkActive="is-active">
+      <div class="menu-name" [routerLink]="['/settings']">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        Settings
+      </div>
+    </li>
+    <li class="menu-item" routerLinkActive="is-active">
+      <div class="menu-name" [routerLink]="['/user']">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        User
+      </div>
+    </li>
   </ul>
 </nav>

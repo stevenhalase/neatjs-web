@@ -1,0 +1,17 @@
+<section class="user">
+  <div class="user-header">
+    <h2>User</h2>
+    <a class="btn is-success" (click)="saveSettings()">Save Changes</a>
+  </div>
+  <div class="user-container">
+    <div class="user-hero-header">
+      <img src="{{user.coverimage}}" class="user-cover-image">
+      <span class="user-profile-image-container"><img src="{{user.profileimage}}" class="user-profile-image"></span>
+      <span class="user-title" [ngClass]="{'hidden': showUserNameEdit}" (click)="toggleUserNameEditor()">{{user.username}}</span>
+      <span class="input-wrapper" [ngClass]="{'hidden': !showUserNameEdit}">
+        <input type="text" [(ngModel)]="user.username" id="username-editor" (blur)="toggleUserNameEditor()">
+      </span>
+    </div>
+  </div>
+</section>
+

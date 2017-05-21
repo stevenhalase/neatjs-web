@@ -22,11 +22,11 @@ export class EditPostComponent implements OnInit {
   id: String;
   title: String;
   private sub: any;
-  private apiSubmitUrl: string = 'http://localhost:8080/posts';
-  private apiGetByIdUrl: string = 'http://localhost:8080/posts/';
+  private apiUrl: string = 'http://localhost:8080/posts/';
   post: any = {
     title: 'Test Post Title'
   };
+  showSuccessNotification: Boolean = false;
 
   constructor(private route: ActivatedRoute, private http: Http) { }
 
@@ -53,19 +53,43 @@ export class EditPostComponent implements OnInit {
   }
 
   getPost(): Promise<any> {
-    return this.http.get(this.apiGetByIdUrl + this.id)
+    return this.http.get(this.apiUrl + this.id)
                     .toPromise();
   }
 
   submitPost() {
     this.post.fields = [this.post.content];
     this.post.createdon = new Date();
-    this.http.post(this.apiSubmitUrl, this.post)
+    this.http.post(this.apiUrl, this.post)
       .toPromise().then((data) => {
         console.log(data);
+        this.showNotification();
       }, (error) => {
         console.log(error)
       });
+  }
+
+  updatePost() {
+    this.post.fields = [this.post.content];
+    this.post.createdon = new Date();
+    this.http.put(this.apiUrl + this.id, this.post)
+      .toPromise().then((data) => {
+        console.log(data);
+        this.showNotification();
+      }, (error) => {
+        console.log(error)
+      });
+  }
+
+  showNotification() {
+    this.showSuccessNotification = true;
+    setTimeout(() => {
+      this.showSuccessNotification = false;
+    }, 2000);
+  }
+
+  closeNotification() {
+    this.showSuccessNotification = false;
   }
 
   ngOnDestroy() {
@@ -73,20 +97,20 @@ export class EditPostComponent implements OnInit {
   }
 
   onEditorBlured(quill) {
-    console.log('editor blur!', quill);
+    // console.log('editor blur!', quill);
   }
 
   onEditorFocused(quill) {
-    console.log('editor focus!', quill);
+    // console.log('editor focus!', quill);
   }
 
   onEditorCreated(quill) {
     this.editor = quill;
-    console.log('quill is ready! this is current quill instance object', quill);
+    // console.log('quill is ready! this is current quill instance object', quill);
   }
 
   onContentChanged({ quill, html, text }) {
-    console.log('quill content is changed!', quill, html, text);
+    // console.log('quill content is changed!', quill, html, text);
   }
 
 }
