@@ -76,48 +76,28 @@
   text-shadow: 1px 1px rgba(0,0,0,0.7);
 }
 
-.user .user-container .user-hero-header .user-title:after {
-  content: '\F040';
-  font-family: FontAwesome;
-  position: relative;
-  bottom: 3px;
-  left: 10px;
-  color: #FFF;
-  font-size: 12px;
-}
-
-.user .user-container .user-hero-header .input-wrapper {
-  position: absolute;
-  left: calc(5% + 125px);
-  bottom: 28px;
-  font-size: 28px;
-  font-weight: 200;
-  width: 290px;;
-}
-
-.user .user-container .user-hero-header .input-wrapper:after {
-  content: '\F00C';
-  font-family: FontAwesome;
-  position: absolute;
-  bottom: 10px;
-  right: -30px;
-  color: #333;
-  font-size: 12px;
-}
-
-.user .user-container .user-hero-header input {
-  font-size: 28px;
-  font-weight: 200;
-  width: 100%;
-  outline: none;
-  background-color: transparent;
-  border: none;
+.user .user-settings-container {
+  margin: 15px;
+  padding: 15px;
   background-color: #FFF;
-  padding-left: 5px;
-  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-.hidden,
-.hidden:after {
-  visibility: hidden;
+.user .user-settings-container .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.user .user-settings-container .input-wrapper input {
+  font-size: 14px;
+  padding: 5px;
+  width: 50%;
+}
+
+.user .user-settings-container .input-wrapper label {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 5px;
 }

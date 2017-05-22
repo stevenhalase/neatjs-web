@@ -1,0 +1,27 @@
+<section class="dashboard">
+  <div class="dashboard-container">
+    <div class="dashboard-card">
+      <div class="dashboard-card-header">
+        <span>Activity</span>
+      </div>
+      <div class="dashboard-card-content">
+        <p class="dashboard-card-list-title">Recently Modified</p>
+        <div class="recent-post" *ngFor="let post of recentPosts">
+          <span>{{(post.modifiedon ? post.modifiedon : post.createdon) | date:'medium'}}</span>
+          <a [routerLink]="['/posts/edit/' + post._id]">{{post.title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-card">
+      <div class="dashboard-card-header">
+        <span>Your Posts</span>
+      </div>
+      <div class="dashboard-card-content">
+        <div class="user-post" *ngFor="let post of userPosts">
+          <span>{{(post.modifiedon ? post.modifiedon : post.createdon) | date:'medium'}}</span>
+          <a [routerLink]="['/posts/edit/' + post._id]">{{post.title}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

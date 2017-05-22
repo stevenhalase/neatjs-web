@@ -13,6 +13,8 @@
           <th>Categories</th>
           <th>Status</th>
           <th>Date</th>
+          <th>Modified By</th>
+          <th>Modified On</th>
         </tr>
       </thead>
       <tbody>
@@ -22,12 +24,20 @@
             <span class="post-title" [routerLink]="['/posts/edit/' + post._id]">{{post.title}}</span>
             <span class="post-permalink">http://www.20theme.com/products/0</span>
           </td>
-          <td>Joe Schmoe</td>
+          <td>
+            <img src="{{post.createdby.profileimage}}" *ngIf="post.createdby"/>
+            <span>{{post.createdby ? post.createdby.username : ''}}</span>
+          </td>
           <td>Blog</td>
           <td>
             <span class="chip is-primary">{{post.status}}</span>
           </td>
           <td>{{post.createdon | date:'shortDate'}}</td>
+          <td>
+            <img src="{{post.modifiedby.profileimage}}" *ngIf="post.modifiedby"/>
+            <span>{{post.modifiedby ? post.modifiedby.username : ''}}</span>
+          </td>
+          <td>{{post.modifiedon | date:'shortDate'}}</td>
         </tr>
       </tbody>
     </table>

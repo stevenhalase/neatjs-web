@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../auth-service/auth.service';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -15,17 +17,17 @@ export class UserComponent implements OnInit {
 
   showUserNameEdit: Boolean;
 
-  constructor() {
-   }
+  constructor(private authService: AuthService) {
+    console.log(authService.user)
+  }
 
   ngOnInit() {
   }
 
-  toggleUserNameEditor(){
-    this.showUserNameEdit = !this.showUserNameEdit;
-    if (this.showUserNameEdit) {
-      document.getElementById("username-editor").focus();
-    }
+  saveSettings() {
+    this.authService.updateUser().then((data) => {
+      console.log(data);
+    })
   }
 
 }

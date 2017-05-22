@@ -5,13 +5,36 @@
   </div>
   <div class="user-container">
     <div class="user-hero-header">
-      <img src="{{user.coverimage}}" class="user-cover-image">
-      <span class="user-profile-image-container"><img src="{{user.profileimage}}" class="user-profile-image"></span>
-      <span class="user-title" [ngClass]="{'hidden': showUserNameEdit}" (click)="toggleUserNameEditor()">{{user.username}}</span>
-      <span class="input-wrapper" [ngClass]="{'hidden': !showUserNameEdit}">
-        <input type="text" [(ngModel)]="user.username" id="username-editor" (blur)="toggleUserNameEditor()">
-      </span>
+      <img src="{{authService.user.coverimage}}" class="user-cover-image">
+      <span class="user-profile-image-container"><img src="{{authService.user.profileimage}}" class="user-profile-image"></span>
+      <span class="user-title">{{authService.user.username}}</span>
     </div>
+  </div>
+  <div class="user-settings-container">
+    <span class="input-wrapper">
+      <label>Username</label>
+      <input type="text" [(ngModel)]="authService.user.username" />
+    </span>
+    <span class="input-wrapper">
+      <label>First Name</label>
+      <input type="text" [(ngModel)]="authService.user.firstname" />
+    </span>
+    <span class="input-wrapper">
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="authService.user.lastname" />
+    </span>
+    <span class="input-wrapper">
+      <label>Email Address</label>
+      <input type="text" [(ngModel)]="authService.user.email" />
+    </span>
+    <span class="input-wrapper">
+      <label>Profile Image</label>
+      <input type="text" [(ngModel)]="authService.user.profileimage" />
+    </span>
+    <span class="input-wrapper">
+      <label>Cover Image</label>
+      <input type="text" [(ngModel)]="authService.user.coverimage" />
+    </span>
   </div>
 </section>
 

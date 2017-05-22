@@ -90,3 +90,10 @@
   margin: 15px;
 }
 
+.publish-options-list li img {
+  width: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+

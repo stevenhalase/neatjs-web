@@ -1,0 +1,67 @@
+.dashboard {
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - 50px);
+  width: calc(100vw - 200px);
+  background-color: #EEE;
+  overflow-y: auto;
+}
+
+.dashboard .dashboard-container {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.dashboard .dashboard-container .dashboard-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  padding: 10px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.dashboard .dashboard-container .dashboard-card .dashboard-card-header {
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #DDD;
+}
+
+.dashboard .dashboard-container .dashboard-card .dashboard-card-header span {
+  font-size: 14px;
+}
+
+.dashboard .dashboard-container .dashboard-card .dashboard-card-content {
+  padding: 10px 0;
+}
+
+.dashboard .dashboard-container .dashboard-card .dashboard-card-list-title {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.dashboard .dashboard-container .dashboard-card .recent-post,
+.dashboard .dashboard-container .dashboard-card .user-post {
+  font-size: 14px;
+  padding: 0 0 5px 0;
+}
+
+.dashboard .dashboard-container .dashboard-card .recent-post span,
+.dashboard .dashboard-container .dashboard-card .user-post span {
+  color: #888;
+  margin-right: 20px;
+}
+
+.dashboard .dashboard-container .dashboard-card .recent-post a,
+.dashboard .dashboard-container .dashboard-card .user-post a {
+  cursor: pointer;
+  color: #006f94;
+}
+
+.dashboard .dashboard-container .dashboard-card .recent-post a:hover,
+.dashboard .dashboard-container .dashboard-card .user-post a:hover {
+  color: #015d7c;
+}

@@ -15,9 +15,17 @@ import { SettingsComponent } from './settings/settings.component';
 import { UserComponent } from './user/user.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { AuthService } from './auth-service/auth.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginPageComponent },
+  { path: 'dashboard', component: AdminPageComponent,
+    children: [
+      { path: '', component: DashboardComponent }
+    ] 
+  },
   { path: 'posts', component: AdminPageComponent,
     children: [
       { path: '', component: PostsListComponent },
@@ -48,7 +56,8 @@ const appRoutes: Routes = [
     SettingsComponent,
     UserComponent,
     AdminPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +67,9 @@ const appRoutes: Routes = [
     QuillEditorModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

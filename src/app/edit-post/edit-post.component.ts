@@ -6,6 +6,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
+import { AuthService } from '../auth-service/auth.service';
+
 @Component({
   selector: 'app-edit-post',
   templateUrl: './edit-post.component.html',
@@ -28,7 +30,7 @@ export class EditPostComponent implements OnInit {
   };
   showSuccessNotification: Boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: Http) { }
+  constructor(private route: ActivatedRoute, private http: Http, private authService: AuthService) { }
 
   ngOnInit() {
     this.title = 'Add New Post';
@@ -60,6 +62,7 @@ export class EditPostComponent implements OnInit {
   submitPost() {
     this.post.fields = [this.post.content];
     this.post.createdon = new Date();
+    this.post.createdby = this.authService.user;
     this.http.post(this.apiUrl, this.post)
       .toPromise().then((data) => {
         console.log(data);
@@ -71,7 +74,8 @@ export class EditPostComponent implements OnInit {
 
   updatePost() {
     this.post.fields = [this.post.content];
-    this.post.createdon = new Date();
+    this.post.modifiedon = new Date();
+    this.post.modifiedby = this.authService.user;
     this.http.put(this.apiUrl + this.id, this.post)
       .toPromise().then((data) => {
         console.log(data);

@@ -51,8 +51,26 @@
       <div class="panel-content">
         <ul class="publish-options-list">
           <li>
+            <p>Created By</p>
+            <p>
+              <img src="{{post.createdby ? post.createdby.profileimage : ''}}"/>
+              <span>{{post.createdby ? post.createdby.username : ''}}</span>
+            </p>
+          </li>
+          <li>
             <p>Created On</p>
             <p>{{post.createdon | date:'medium'}}</p>
+          </li>
+          <li>
+            <p>Modified By</p>
+            <p>
+              <img src="{{post.modifiedby ? post.modifiedby.profileimage : ''}}"/>
+              <span>{{post.modifiedby ? post.modifiedby.username : ''}}</span>
+            </p>
+          </li>
+          <li>
+            <p>Modified On</p>
+            <p>{{post.modifiedon | date:'medium'}}</p>
           </li>
         </ul>
       </div>

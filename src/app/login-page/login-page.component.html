@@ -1,8 +1,25 @@
 <section class="login-page">
-  <div class="login-container">
+  <div class="login-container" *ngIf="resettingPassword === false">
     <span class="brand">NeatJS</span>
+    <div class="login-notification" *ngIf="successfulLogin === false">
+      <p>Email Address and Password combination incorrect.</p>
+    </div>
+    <input type="text" placeholder="Email Address" [(ngModel)]="authService.user.email">
+    <input type="password" placeholder="Password" [(ngModel)]="authService.user.password">
+    <a class="btn is-success" (click)="login()">Login</a>
+    <div class="login-options">
+      <a (click)="resettingPassword = true">Forgot Password?</a>
+    </div>
+  </div>
+  <div class="forgot-password-container login-container" *ngIf="resettingPassword === true">
+    <span class="brand">NeatJS</span>
+    <div class="login-notification">
+      <p>Please enter your username or email address. You will receive a link to create a new password via email.</p>
+    </div>
     <input type="text" placeholder="Email Address">
-    <input type="password" placeholder="Password">
-    <a class="btn is-success">Login</a>
+    <a class="btn is-success" (click)="resetPassword()">Reset Password</a>
+    <div class="login-options">
+      <a (click)="resettingPassword = false">Cancel</a>
+    </div>
   </div>
 </section>

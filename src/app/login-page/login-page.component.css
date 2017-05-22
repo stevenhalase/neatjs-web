@@ -29,7 +29,7 @@
   border: none;
   background-color: #FFF;
   padding: 5px;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   box-sizing: border-box;
 }
 
@@ -43,4 +43,31 @@
   font-size: 40px;
   color: #FFF;
   margin-bottom: 25px;
+}
+
+.login-page .login-container .login-options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.login-page .login-container .login-options a {
+  padding: 5px;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.login-page .login-container .login-options a:hover {
+  color: #DDD;
+}
+
+.login-page .login-container .login-notification {
+  padding: 10px;
+  background-color: #FFF;
+  margin-bottom: 10px;
+  font-size: 12px;
+  border-left: 5px solid #3498db;
+  width: 100%;
+  box-sizing: border-box;
 }

@@ -49,6 +49,17 @@
   font-size: 14px;
 }
 
+.posts-list .table-container table tbody td img {
+  width: 25px;
+  border-radius: 50%;
+  vertical-align: inherit;
+  margin-right: 5px;
+}
+
+.posts-list .table-container table tbody td img+span {
+  vertical-align: middle;
+}
+
 .posts-list .table-container table .post-permalink {
   display: block;
   font-size: 12px;

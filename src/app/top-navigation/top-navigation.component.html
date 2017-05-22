@@ -11,8 +11,13 @@
     <a class="nav-item">
       <i class="fa fa-envelope-o" aria-hidden="true"></i>
     </a>
-    <a class="nav-item user-item">
-      <img src="https://gitlab.com/uploads/user/avatar/56386/tt_avatar_small.jpg" />
+    <a class="nav-item user-item" (click)="showPopout = !showPopout">
+      <div class="popout" *ngIf="showPopout === true">
+        <ul>
+          <li (click)="authService.logout()">Logout</li>
+        </ul>
+      </div>
+      <img src="{{authService.user.profileimage}}"/>
     </a>
   </div>
 </nav>

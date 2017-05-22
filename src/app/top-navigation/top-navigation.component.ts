@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../auth-service/auth.service';
+
 @Component({
   selector: 'app-top-navigation',
   templateUrl: './top-navigation.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor() { }
+  showPopout: Boolean = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
